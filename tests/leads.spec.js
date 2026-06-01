@@ -1,56 +1,46 @@
 // @ts-check
-import { test, expect} from '@playwright/test';
-const {LandingPage} = require('./pages/LandingPage.js')
+import { test } from '@playwright/test'
+const { LandingPage } = require('./pages/LandingPage.js')
 
-test('deve cadastrar um lead na fila de espera', async ({ page }) => {
-  const landingPage = new LandingPage(page)
+/** @type {import('./pages/LandingPage.js').LandingPage} */
+let landingPage
+
+test.beforeEach(async ({ page }) => {
+  landingPage = new LandingPage(page)
   await landingPage.visit()
   await landingPage.openLeadModel()
+})
+
+test('deve cadastrar um lead na fila de espera', async () => {
   await landingPage.submitLeadForm('Matheus', 'qalab@hotmail.com')
 
   const msg = 'Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!'
   await landingPage.toasHaveText(msg)
+})
 
-});
-
-
-test('nao deve cadastrar quando o email é incorreto', async ({ page }) => {
-  const landingPage = new LandingPage(page)
-  await landingPage.visit()
-  await landingPage.openLeadModel()
+test('nao deve cadastrar quando o email e incorreto', async () => {
   await landingPage.submitLeadForm('Matheus', 'qalab.com')
 
-  await landingPage.alertHaveText('Email incorreto');
-  
+  await landingPage.alertHaveText('Email incorreto')
+})
 
-});
-
-test('nao deve cadastrar quando o nome não é preenchido incorreto', async ({ page }) => {
-  const landingPage = new LandingPage(page)
-  await landingPage.visit()
-  await landingPage.openLeadModel()
+test('nao deve cadastrar quando o nome nao e preenchido', async () => {
   await landingPage.submitLeadForm('', 'qalab@hotmail.com')
 
-  await expect(page.locator('.alert')).toHaveText('Campo obrigatório')
-});
+  await landingPage.alertHaveText('Campo obrigatório')
+})
 
-test('nao deve cadastrar quando o email não é preenchido', async ({ page }) => {
-  const landingPage = new LandingPage(page)
-  await landingPage.visit()
-  await landingPage.openLeadModel()
+test('nao deve cadastrar quando o email nao e preenchido', async () => {
   await landingPage.submitLeadForm('Matheus', '')
 
-  await landingPage.alertHaveText('Campo obrigatório');
-});
+  await landingPage.alertHaveText('Campo obrigatório')
+})
 
-test('nao deve cadastrar quando o nome e email não é preenchido', async ({ page }) => {
-  const landingPage = new LandingPage(page)
-  await landingPage.visit()
-  await landingPage.openLeadModel()
+test('nao deve cadastrar quando o nome e email nao sao preenchidos', async () => {
   await landingPage.submitLeadForm('', '')
 
-   await landingPage.alertHaveText([
+  await landingPage.alertHaveText([
     'Campo obrigatório',
-    'Campo obrigatório'
-   ]);
-});
+    'Campo obrigatório',
+  ])
+})
