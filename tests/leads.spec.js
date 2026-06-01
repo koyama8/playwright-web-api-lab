@@ -13,7 +13,7 @@ test('deve cadastrar um lead na fila de espera', async ({ page }) => {
    ).toHaveText('Fila de espera')
 
   await page.locator('input[name="name"]').fill('Matheus')
-  await page.getByPlaceholder('Seu email principal').fill('qalab@hotmail.com')
+  await page.getByPlaceholder('Informe seu email').fill('qalab@hotmail.com')
 
   await page.getByTestId('modal')
        .getByText('Quero entrar na fila!').click()
@@ -41,7 +41,7 @@ test('nao deve cadastrar quando o nome não é preenchido', async ({ page }) => 
 
   
   await page.locator('input[name="name"]').fill('Matheus')
-  await page.getByPlaceholder('Seu email principal').fill('qalab.com.br')
+  await page.getByPlaceholder('Informe seu email').fill('qalab.com.br')
   
   await page.getByTestId('modal')
        .getByText('Quero entrar na fila!').click()
