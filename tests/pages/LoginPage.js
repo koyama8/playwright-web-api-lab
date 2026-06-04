@@ -29,4 +29,14 @@ export class LoginingPage {
     await expect(this.page).toHaveURL(/.*admin/)
   }
 
+  async alertHaveText(text){
+    const alert = this.page.locator('span[class$=alert]')
+    await expect(alert).toHaveText(text)
+  }
+
+  async alertHaveTextpassword(text){
+    const alert = this.page.locator('.password-alert')
+    await expect(alert).toHaveText(text)
+  }
+
 }

@@ -19,13 +19,35 @@ test('deve logar com administrador', async () => {
    await loginingPage.isLoggedIn()
 })
 
-test('não deve logar com administrador', async () => {
+test('não deve logar com senha incorreta', async () => {
    await loginingPage.submit('admin@zombieplus.com','pwd1234')
-
+  
    const msg = "Oops!Ocorreu um erro ao tentar efetuar o login. Por favor, verifique suas credenciais e tente novamente."
    
    await toast.toasHaveText(msg)
     
    await loginingPage.isLoggedIn()
 })
+
+
+test('não deve logar quando o email não é preenchido', async () => {
+   await loginingPage.submit(' ','pwd1234')
+  
+   const msg = "Email incorreto"
+   
+   await loginingPage.alertHaveText(msg)
+    
+   await loginingPage.isLoggedIn()
+})
+
+test('não deve logar quando a senha não é preenchida', async () => {
+   await loginingPage.submit('qalab@hotmail.com','')
+  
+   const msg = "Campo obrigatório"
+   
+   await loginingPage.alertHaveTextpassword(msg)
+    
+   await loginingPage.isLoggedIn()
+})
+
 
