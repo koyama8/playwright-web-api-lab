@@ -1,0 +1,82 @@
+{
+  "night_of_the_living_dead": {
+    "title": "Night of the Living Dead",
+    "overview": "Sobreviventes se refugiam em uma casa isolada enquanto mortos-vivos começam a tomar conta da região.",
+    "company": "Continental Distributing",
+    "release_year": 1968,
+    "featured": false,
+    "cover": "/images/movies/night-of-the-living-dead.png"
+  },
+  "dawn_of_the_dead": {
+    "title": "Dawn of the Dead",
+    "overview": "Durante o colapso da sociedade causado por uma epidemia zumbi, um grupo tenta sobreviver escondido em um shopping center.",
+    "company": "United Film Distribution Company",
+    "release_year": 1978,
+    "featured": false,
+    "cover": "/images/movies/dawn-of-the-dead.png"
+  },
+  "the_return_of_the_living_dead": {
+    "title": "The Return of the Living Dead",
+    "overview": "Um vazamento acidental libera mortos-vivos famintos por cérebros e mergulha uma pequena cidade no caos.",
+    "company": "Orion Pictures",
+    "release_year": 1985,
+    "featured": false,
+    "cover": "/images/movies/the-return-of-the-living-dead.png"
+  },
+  "twenty_eight_days_later": {
+    "title": "28 Days Later",
+    "overview": "Após acordar de um coma, um homem encontra Londres devastada por um vírus que transforma pessoas em criaturas violentas.",
+    "company": "Fox Searchlight Pictures",
+    "release_year": 2002,
+    "featured": false,
+    "cover": "/images/movies/28-days-later.png"
+  },
+  "resident_evil": {
+    "title": "Resident Evil",
+    "overview": "Uma equipe entra em um laboratório subterrâneo após o vazamento de um vírus mortal que reanima os mortos.",
+    "company": "Screen Gems",
+    "release_year": 2002,
+    "featured": false,
+    "cover": "/images/movies/resident-evil.png"
+  },
+  "shaun_of_the_dead": {
+    "title": "Shaun of the Dead",
+    "overview": "Um vendedor comum tenta proteger amigos e familiares quando um apocalipse zumbi atinge Londres.",
+    "company": "Universal Pictures",
+    "release_year": 2004,
+    "featured": false,
+    "cover": "/images/movies/shaun-of-the-dead.png"
+  },
+  "rec": {
+    "title": "[REC]",
+    "overview": "Uma repórter acompanha bombeiros em um prédio residencial e acaba presa em meio a um surto aterrorizante.",
+    "company": "Filmax",
+    "release_year": 2007,
+    "featured": false,
+    "cover": "/images/movies/rec.png"
+  },
+  "zombieland": {
+    "title": "Zombieland",
+    "overview": "Quatro sobreviventes atravessam os Estados Unidos tentando se manter vivos em um mundo dominado por zumbis.",
+    "company": "Sony Pictures Releasing",
+    "release_year": 2009,
+    "featured": false,
+    "cover": "/images/movies/zombieland.png"
+  },
+  "world_war_z": {
+    "title": "World War Z",
+    "overview": "Um ex-investigador da ONU percorre diversos países para tentar conter uma pandemia global de zumbis.",
+    "company": "Paramount Pictures",
+    "release_year": 2013,
+    "featured": false,
+    "cover": "/images/movies/world-war-z.png"
+  },
+  "train_to_busan": {
+    "title": "Train to Busan",
+    "overview": "Passageiros de um trem de alta velocidade lutam para sobreviver quando um surto zumbi se espalha pela Coreia do Sul.",
+    "company": "Next Entertainment World",
+    "release_year": 2016,
+    "featured": false,
+    "cover": "/images/movies/train-to-busan.png"
+  }
+}
