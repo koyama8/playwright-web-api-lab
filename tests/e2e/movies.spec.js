@@ -5,6 +5,7 @@ const data = require('../support/fixtures/movies.json')
 const { LoginingPage } = require('../pages/LoginPage.js')
 const { Moviespage } = require('../pages/Moviespage.js')
 const { Toast } = require('../pages/Components.js')
+const { executeSQL } = require('../support/databse.js')
 
 /** @type {import('../pages/Moviespage.js').Moviespage} */
 
@@ -20,12 +21,16 @@ test.beforeEach(async ({ page }) => {
 })
  
 test('deve poder cadastrar um novo filme', async({page}) => {
-    
+
     const movie = data.create
+
+    await executeSQL(`DELETE from movies WHERE title = '${movie.title}';`)
 
     await loginingPage.submit('admin@zombieplus.com','pwd123')
     await moviespage.isLoggedIn()
 
     await moviespage.create(movie.title, movie.overview, movie.company, movie.release_year)
+
+    await toast.containText('Cadastro realizado com sucesso!')
     
 })

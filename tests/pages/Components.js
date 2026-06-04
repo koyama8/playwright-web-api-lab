@@ -14,8 +14,8 @@ export class Toast {
   }
 
   async containText(msg) {
-    const toast = this.page.locator('.locator')
-    await expect(toast).containText(msg)
+    const toast = this.page.locator('.toast')
+    await expect(toast).toContainText(msg)
        
     await this.page.waitForTimeout(3000);
 
