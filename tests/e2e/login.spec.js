@@ -1,9 +1,9 @@
 const { test } = require('@playwright/test')
 
-const { Login } = require('../actions/Login.js')
-const { Toast } = require('../actions/Components.js')
+const { Login } = require('../support/actions/Login.js')
+const { Toast } = require('../support/actions/Components.js')
 
-/** @type {import('../actions/Login.js').Login} */
+/** @type {import('../support/actions/Login.js').Login} */
 
 let loginingPage
 let toast

@@ -1,8 +1,8 @@
 const { test: base, expect } = require('@playwright/test')
 
-const { Login } = require('../actions/Login.js')
-const { Movies } = require('../actions/Movies.js')
-const { Toast } = require('../actions/Components.js')
+const { Login } = require('./actions/Login.js')
+const { Movies } = require('./actions/Movies.js')
+const { Toast } = require('./actions/Components.js')
 
 const test = base.extend({
     page: async ({page}, use) => {

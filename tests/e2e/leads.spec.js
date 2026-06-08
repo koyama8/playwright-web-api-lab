@@ -2,14 +2,14 @@
 import { expect, test } from '@playwright/test'
 const { faker } = require('@faker-js/faker');
 
-const { Leads } = require('../actions/Leads.js')
-const { Toast } = require('../actions/Components.js')
+const { Leads } = require('../support/actions/Leads.js')
+const { Toast } = require('../support/actions/Components.js')
 
 
-/** @type {import('../actions/Leads.js').Leads} */
+/** @type {import('../support/actions/Leads.js').Leads} */
 let landingPage
 
-/** @type {import('../actions/Components.js').Toast} */
+/** @type {import('../support/actions/Components.js').Toast} */
 let toast
 
 test.beforeEach(async ({ page }) => {
