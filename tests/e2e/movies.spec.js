@@ -21,6 +21,31 @@ test('deve poder cadastrar um novo filme', async({ page }) => {
       )
     await page.toast.containText('Cadastro realizado com sucesso!')   
 })
+
+test('não deve cadastrar quando o titulo é duplicado', async({ page }) => {
+
+    const movie = data.duplicate
+    await executeSQL(`DELETE from movies WHERE title = '${movie.title}';`)
+
+    await page.login.do('admin@zombieplus.com', 'pwd123', 'Admin')
+
+   await  page.movies.create(
+         movie.title,
+         movie.overview,
+         movie.company,
+         movie.release_year,
+         movie.featured
+      )
+
+   await  page.movies.create(
+         movie.title,
+         movie.overview,
+         movie.company,
+         movie.release_year,
+         movie.featured
+      )
+    await page.toast.containText('Este conteúdo já encontra-se cadastrado no catálogo')   
+})
  
  test('não deve cadastrar quando os campos obrigatorios não são preenchidos', async({ page }) => {
   
