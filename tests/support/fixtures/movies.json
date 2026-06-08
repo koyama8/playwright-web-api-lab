@@ -4,7 +4,7 @@
     "overview": "Sobreviventes se refugiam em uma casa isolada enquanto mortos-vivos começam a tomar conta da região.",
     "company": "Netflix",
     "release_year": 1970,
-    "featured": false,
+    "featured": true,
     "cover": "/images/movies/night-of-the-living-dead.png"
   },
   "dawn_of_the_dead": {

@@ -29,7 +29,7 @@ export class Movies {
       await expect(this.page.locator('.alert')).toHaveText(text)
      }
 
-     async create(title,overview,company,release_year){
+     async create(title,overview,company,release_year,featured){
 
        await this.goForm()
 
@@ -46,8 +46,15 @@ export class Movies {
       
        await this.page.locator('.react-select__option').filter({hasText: release_year})
                  .click()
- 
+
+                 
+       if(featured){
+        await this.page.locator('.featured .react-switch').click()
+       } 
+
        await this.submit()
      }
+
+
     
 }
