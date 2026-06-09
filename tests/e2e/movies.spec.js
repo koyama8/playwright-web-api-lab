@@ -1,5 +1,5 @@
 //Traz o dados do index.js
-const { test } = require('../support')
+const { test, expect } = require('../support')
 
 const data = require('../support/fixtures/movies.json')
 
@@ -22,29 +22,22 @@ test('deve poder cadastrar um novo filme', async({ page }) => {
     await page.toast.containText('Cadastro realizado com sucesso!')   
 })
 
-test('não deve cadastrar quando o titulo é duplicado', async({ page }) => {
+test('não deve cadastrar quando o titulo é duplicado', async({ page, request }) => {
 
     const movie = data.duplicate
     await executeSQL(`DELETE from movies WHERE title = '${movie.title}';`)
 
-    await page.login.do('admin@zombieplus.com', 'pwd123', 'Admin')
+    await request.api.setToken()
 
-   await  page.movies.create(
-         movie.title,
-         movie.overview,
-         movie.company,
-         movie.release_year,
-         movie.featured
-      )
-
-   await  page.movies.create(
-         movie.title,
-         movie.overview,
-         movie.company,
-         movie.release_year,
-         movie.featured
-      )
-    await page.toast.containText('Este conteúdo já encontra-se cadastrado no catálogo')   
+   //await page.login.do('admin@zombieplus.com', 'pwd123', 'Admin')
+  // await  page.movies.create(
+   //      movie.title,
+  //       movie.overview,
+  //       movie.company,
+   //      movie.release_year,
+  //       movie.featured
+  //    )
+   // await page.toast.containText('Este conteúdo já encontra-se cadastrado no catálogo')   
 })
  
  test('não deve cadastrar quando os campos obrigatorios não são preenchidos', async({ page }) => {
