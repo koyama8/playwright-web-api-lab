@@ -57,3 +57,19 @@ test('não deve cadastrar quando o titulo é duplicado', async({ page, request }
 })
 
 
+ test('deve poder remover um filme ', async({ page, request }) => {
+  const movie = data.to_remove
+
+  await executeSQL(`DELETE from movies WHERE title = '${movie.title}';`)
+  await request.api.postMovie(movie)
+
+  await page.login.do('admin@zombieplus.com', 'pwd123', 'Admin')
+
+  await page.movies.remove(movie.title)
+
+  ////td[text()="Night of the Living Dead"]/..//button
+  await page.popup.haveText('Filme removido com sucesso.')
+
+})
+
+

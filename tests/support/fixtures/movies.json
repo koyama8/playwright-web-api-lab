@@ -15,10 +15,10 @@
     "featured": false,
     "cover": "/images/movies/dawn-of-the-dead.png"
   },
-  "the_return_of_the_living_dead": {
+  "to_remove": {
     "title": "The Return of the Living Dead",
     "overview": "Um vazamento acidental libera mortos-vivos famintos por cérebros e mergulha uma pequena cidade no caos.",
-    "company": "Columbia Pictures",
+    "company": "Universal Pictures",
     "release_year": 1985,
     "featured": false,
     "cover": "/images/movies/the-return-of-the-living-dead.png"
