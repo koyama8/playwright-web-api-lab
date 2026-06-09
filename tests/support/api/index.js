@@ -21,8 +21,23 @@ export class Api {
 
     const body = JSON.parse(await response.text())
 
-    this.token = body.token
-    console.log(this.token)
+    this.token = 'Bearer ' + body.token 
+  }
 
+  async postMovie(movie){
+     const response = await this.request.post('http://localhost:3333/movies', {
+         headers: {
+            Authorization: this.token 
+         },
+         multipart: {
+           title: movie.title,
+           overview: movie.overview,
+           company_id: '461db9c9-9161-47cf-98a0-1675f0ef0a76',
+           release_year: movie.release_year,
+           featured: movie.featured
+         }
+     })
+   
+     expect(response.ok()).toBeTruthy()
   }
 }
